@@ -130,6 +130,4 @@ dmypy.json
 
 
 # image directories
-images/Madjek/
-images/Madjek_Class/
-images/Madjek_NoClass/
+images/
