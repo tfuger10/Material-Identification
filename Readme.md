@@ -1,5 +1,7 @@
 # Material Identification using CNN Image Classification
+
 ***
+
 Tim Fuger
 
 
@@ -10,7 +12,7 @@ I would like to give credit to Madjek, Inc. in Amityville, NY who provided the f
 
 ## Business Problem
 
-To develop a Covolutional Nueral Network that can properly identify material types for warehouse and scrap material handling.
+To develop a Convolutional Neural Network that can properly identify material types for warehouse and scrap material handling.
 
 
 ## Project Overview
@@ -39,7 +41,7 @@ The client also understands that achieving this ultimate goal will take iteratio
 
 The images in this dataset contains around 2000 images that were taken at varying view points in both the warehouse and the scrap racks: 
 
-![My Image](Visualizations/Images-sample.png)
+![My Image](Visualizations/Sample-Original.png)
 
 All images were taken on a Iphone 13 pro camera. Across the range of images, there are a variety of lighting conditions, as well as a variety of close up and far away images. The far away images were taken within the warehouse, and are used to identify an entire stack of material, where the material will be the same for the entire stack. The close up images vary for both the warehouse and the scrap racks, where the piece of material that is centered in the image is what is identified as the material type. All original images in the dataset are located in images/0_Madjek_NoClass. There are other folders in images which were part of preprocessing, please see the first section of Preprocessing for more information on these folders.
 
@@ -67,18 +69,27 @@ After determining our final model, we then explored the model's feature maps to 
 
 ## Feature Importances
 
-Using the Lime package, we were able to identify areas in the image where the model found the most important in making its prediction. 
+Using the Lime package, we were able to identify areas in the image where the model found the most important in making its prediction. Both for correct and incorrect image predictions.
 
-![My Image](Visualizations/Feature-Importance.png)
+![My Image](Visualizations/TM1-Correct_Image_Explainer.png)
 
+![My Image](Visualizations/TM1-Incorrect_Image_Explainer.png)
+
+And by the look of the images, the inconsistency of images will lead to incorrect predictions in the dataset.
 
 ## Results
 
 With callbacks integrated into the final model, the model seems to stop prior to the 50 epochs set, and converges at about 68% accuracy for the model.
 
-![My Image](Visualizations/TM1-Loss_and_Accuracy.png)
+![My Image](Visualizations/TM1-Accuracy.png)
 
-So we just misssed the required criteria for this exercise. But we were extremely close to where we needed to be for this initial iteration of this image classifier. We only missed our initial goal of 70% by a few percentage points. Most of this error was in the model confusing TFL and PC sheets, which is understandably difficult given the similar core material.
+![My Image](Visualizations/TM1-Loss.png)
+
+So we just misssed the required criteria for this exercise. But we were extremely close to where we needed to be for this initial iteration of this image classifier. We only missed our initial goal of 70% by a few percentage points. Most of this error in the model was the model confusing TFL and PC sheets, which is understandably difficult given the similar core material. We were able to confirm this suspicion by looking at the probabilities across the board for a sample of incorrect images.
+
+![My Image](Visualizations/Sample-Incorrect-Probabilities.png)
+
+Our final confusion matrix and classification report confirm this as well.
 
 ![My Image](Visualizations/TM1-Confusion_Matrix.png)
 
