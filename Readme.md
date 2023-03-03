@@ -96,15 +96,62 @@ Our final confusion matrix and classification report confirm this as well.
 ![My Image](Visualizations/TM1-Classification_Report.png)
 
 
+## Recommendations
+
+Each working interval should a similar hardware setup in order to take consistent images. It is clear from the incorrectly predicted data that a dedicated area with a mounted camera and a standard lighting strategy is paramount. In order to prevent incorrect predictions, the following takeaways are:
+
+- All images must have no background in them at all.
+
+- There should be no other material in the image frame.
+
+- The area located in the frame of the image should be blown off with compressed air to clean off any dust that might be on the material
+
+
+Here are actionable recommendations for each of the three areas based on our data collection as well as data analysis from this notebook. For each working area at Madjek, a 3d model of the setup was created to clearly show the proposed design of each area:
+
+#### 1. Warehouse for incoming skids for material
+
+a. Section off a 5' x 10' area with a rectangle of floor tape and indicate where a 4' wide stack and 5' wide stack should be placed with a line on the floor, in order to center those stacks with the camera. 
+
+b. Place a mounted camera on a tripod locked to the ground to capture images of the short side of the material stack.
+
+b. On the same side as the camera, warm even light (from ideally two light sources each on either side of the camera) should be pointed at the short side of the material stack.
+
+c. The camera should be mounted as close to the material as possible while also being out of the working area so as to not be hit by people or material. In this case, the optimal positioning is 3'-6" away and 11" high so that it can capture both full stacks and partial stacks of incoming material.
+
+d. On the opposite side of the camera, place a blank backdrop (a blank solid colored wall) to prevent noise in images should the camera be taking picutres of partial stacks of received material.
+
+
+#### 2. Panel saw for scrap parts
+
+a. A standing height work surface should be setup close to the panel saw to accept scrap cuts that vary up to 5' in width and 10' in length. This work surface should be painted or laminated in one solid color.
+
+b. The camera should be mounted as close to the material as possible while also being out of the working area so as to not be hit by people or material. A camera should be hung from the ceiling at about 7 ft high and 9 ft away diagonally to capture the corner of the material.
+
+c. Two light sources should be hung next to the camera pointed at the material to disperse warm even light on the material.
+
+
+
+#### 3. CNC router to confirm the material on the machine prior to cutting
+
+a. The camera should be mounted as close to the material as possible while also being out of the working area so as to not be hit by people or material. Hang mounted camera about 9 ft diagonally from corner of material and 7' in the air, pointed towards material corner at the origin on router when the router is homed.
+
+b. Any other surfaces in the camera frame should be painted or laminated a solid black color to prevent noise.
+
+c. Two light sources should be hung next ot he camera pointed at the material to disperse warm even light on the material.
+
+
+#### Model Implementation
+- The final model from above can be implemented immediately with human assistance. At each working interval the model can automatically make a prediction and store that prediction in the memory of the material handling system at each workstation. The moment that prediction is made, it should also appear on a tablet for the dedicated worker at that workstation. The worker can then check the prediction to the actual material. In 7 out of 10 times, the model will be right. For each time it is wrong though, the worker should be able to press the correct material on the tablet in order to inform the algorithm, that way it can train to become more accurate over time. This period of human oversight should take place for 90 days after implementation. During this time, all points in the "next steps" category should be completed. After this 90 day period, the model will be assessed again for its rate of accuracy, and next steps will be determined pending the outcomes of the assessment.
+
+
+
 ## Next Steps
 
-Next steps beyond this investigation would be to:
-
-- Collect data again with additional time to create a more consistent method for obtaining quality data that is at the same distance from the object, and in the same lighting conditions. This setup would have to be engineered for each interval in the working process where an image must be taken.
+Further analysis could yield additional insight such as:
 - Increase the amount of data that the algorithm trains on. While 2,000 images is a good start, 10,000 or 20,000 would be even better for improving the performance of the model.
-- Each working interval should a similar hardware setup in order to take consistent images at each interval. A dedicated area with a mounted camera and a lighting strategy should exist in (1) the warehouse for incoming skids for material, (2) at the panel saw for scrap parts, and (3) at each CNC router to confirm the material on the machine prior to cutting.
-- After a recollection of data, additional fine tuning of the transfer learning model would be required in order to cope with the new conditions.
-- We tried a number of different models in the notebook above, but better results could be obtained by testing the final model through additional iterations.
+- For the warehouse area, it would be better to explore having the camera take a picture of the incoming product label and creating a separate algorithm to parse that information.
+- Additional fine tuning of the transfer model would be required in order to cope with new image conditions. Better results could be obtained by testing the final model through additional iterations as well.
 
 
 ## Repository Navigation
