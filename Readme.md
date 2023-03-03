@@ -193,17 +193,17 @@ In this repository you will find the following files to take note of:
 
 [Notebook](Notebook.ipynb) contains the main data analysis code and notes for this project.
 
-[Crop Images](Image Preprocessing Notebooks/Crop_Images.ipynb) contains code to take all original images from a directory, crop them by a percentage of the original size, and paste in a newly created directory.
+[Crop Images](Image_Preprocessing_Notebooks/Crop_Images.ipynb) contains code to take all original images from a directory, crop them by a percentage of the original size, and paste in a newly created directory.
 
-[Train-Split-Multiclass-Images](Image Preprocessing Notebooks/Train-Split-Multiclass-Images.ipynb) contains code which uses a csv file to save images in a new directory according to their classes. The second half of the code will further take the images in this newly created directory, and split them into folders for train, validation, and test sets of data.
+[Train-Split-Multiclass-Images](Image_Preprocessing_Notebooks/Train-Split-Multiclass-Images.ipynb) contains code which uses a csv file to save images in a new directory according to their classes. The second half of the code will further take the images in this newly created directory, and split them into folders for train, validation, and test sets of data.
 
-[images](images) folder contains all the images used for the dataset.
+[Images](Images) folder contains all the images used for the dataset.
 
 [Data Image Target](Data_Image_Target.csv) contains all the image file names, and the material identified. This file was created by having a human go through each image and label them accordingly in this csv file.
 
 [Visualizations](Visualizations) folder contains all the visualizations such as renderings, drawings, plots and graphs.
 
-[Logs](logs) folder contains all the Tensorboard logs for neural networks that have been run throughtout tworking on this project.
+[Logs](Logs) folder contains all the Tensorboard logs for neural networks that have been run throughtout tworking on this project.
 
 [Material-Identification](Presentation/Material-Identification.pptx) powerpoint presentation.
 
