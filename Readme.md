@@ -106,8 +106,11 @@ Each working interval should a similar hardware setup in order to take consisten
 
 - The area located in the frame of the image should be blown off with compressed air to clean off any dust that might be on the material
 
+- Images should always be taken from the same distance away from material
+
 
 Here are actionable recommendations for each of the three areas based on our data collection as well as data analysis from this notebook. For each working area at Madjek, a 3d model of the setup was created to clearly show the proposed design of each area:
+
 
 #### 1. Warehouse for incoming skids for material
 
@@ -122,6 +125,16 @@ c. The camera should be mounted as close to the material as possible while also 
 d. On the opposite side of the camera, place a blank backdrop (a blank solid colored wall) to prevent noise in images should the camera be taking picutres of partial stacks of received material.
 
 
+Camera frame at Warehouse:
+![My Image](Visualizations/Warehouse-Setup.png)
+
+Camera Setup at Warehouse:
+![My Image](Visualizations/Warehouse-Setup_Camera-Placement.png)
+
+Top view Drawing:
+![My Image](Visualizations/Warehouse-Setup_Camera-Placement3.png)
+
+
 #### 2. Panel saw for scrap parts
 
 a. A standing height work surface should be setup close to the panel saw to accept scrap cuts that vary up to 5' in width and 10' in length. This work surface should be painted or laminated in one solid color.
@@ -131,6 +144,15 @@ b. The camera should be mounted as close to the material as possible while also 
 c. Two light sources should be hung next to the camera pointed at the material to disperse warm even light on the material.
 
 
+Camera frame at Panel Saw:
+![My Image](Visualizations/Panel-Saw-Setup.png)
+
+Camera Setup at Panel Saw:
+![My Image](Visualizations/Panel-Saw-Setup_Camera-Placement.png)
+
+Top View Drawing:
+![My Image](Visualizations/Panel-Saw-Setup_Camera-Placement3.png)
+
 
 #### 3. CNC router to confirm the material on the machine prior to cutting
 
@@ -139,6 +161,17 @@ a. The camera should be mounted as close to the material as possible while also 
 b. Any other surfaces in the camera frame should be painted or laminated a solid black color to prevent noise.
 
 c. Two light sources should be hung next ot he camera pointed at the material to disperse warm even light on the material.
+
+
+Camera frame at CNC router:
+![My Image](Visualizations/CNC-Setup.png)
+
+Camera Setup at CNC router:
+![My Image](Visualizations/CNC-Setup_Camera-Placement.png)
+
+Top View Drawing:
+![My Image](Visualizations/CNC-Setup_Camera-Placement3.png)
+
 
 
 #### Model Implementation
@@ -158,16 +191,22 @@ Further analysis could yield additional insight such as:
 
 In this repository you will find the following files to take note of:
 
-[Notebook](Notebook.ipynb) contains the main source code for this project.
+[Notebook](Notebook.ipynb) contains the main data analysis code and notes for this project.
 
-[Crop Images](Crop_Images.ipynb) contains code to take all original images from a directory, crop them by a percentage of the original size, and paste in a newly created directory.
+[Crop Images](Image Preprocessing Notebooks/Crop_Images.ipynb) contains code to take all original images from a directory, crop them by a percentage of the original size, and paste in a newly created directory.
 
-[Train-Split-Multiclass-Images](Train-Split-Multiclass-Images.ipynb) contains code which uses a csv file to save images in a new directory according to their classes. The second half of the code will further take the images in this newly created directory, and split them into folders for train, validation, and test sets of data.
+[Train-Split-Multiclass-Images](Image Preprocessing Notebooks/Train-Split-Multiclass-Images.ipynb) contains code which uses a csv file to save images in a new directory according to their classes. The second half of the code will further take the images in this newly created directory, and split them into folders for train, validation, and test sets of data.
 
 [images](images) folder contains all the images used for the dataset.
 
-[Material-Identification](Material-Identification.pptx) powerpoint presentation.
+[Data Image Target](Data_Image_Target.csv) contains all the image file names, and the material identified. This file was created by having a human go through each image and label them accordingly in this csv file.
 
-[Material Identification](Material-Identification.pdf) pdf file of presentation.
+[Visualizations](Visualizations) folder contains all the visualizations such as renderings, drawings, plots and graphs.
+
+[Logs](logs) folder contains all the Tensorboard logs for neural networks that have been run throughtout tworking on this project.
+
+[Material-Identification](Presentation/Material-Identification.pptx) powerpoint presentation.
+
+[Material Identification](Presentation/Material-Identification.pdf) pdf file of presentation.
 
 For additional info, contact Tim Fuger at tfuger10@gmail.com
