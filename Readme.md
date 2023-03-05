@@ -73,7 +73,9 @@ Using the Lime package, we were able to identify areas in the image where the mo
 
 ![My Image](Visualizations/TM1-Correct_Image_Explainer.png)
 
-![My Image](Visualizations/TM1-Incorrect_Image_Explainer.png)
+![My Image](Visualizations/TM1-Incorrect_Image_Explainer1.png)
+
+![My Image](Visualizations/TM1-Incorrect_Image_Explainer2.png)
 
 And by the look of the images, the inconsistency of images will lead to incorrect predictions in the dataset.
 
