@@ -193,7 +193,7 @@ Further analysis could yield additional insight such as:
 
 In this repository you will find the following files to take note of:
 
-[Notebook](Notebook.ipynb) contains the main data analysis code and notes for this project.
+[EDA-Modeling-Evaluation](EDA-Modeling-Evaluation.ipynb) contains the main data analysis code and notes for this project.
 
 [Crop Images](Image_Preprocessing_Notebooks/Crop_Images.ipynb) contains code to take all original images from a directory, crop them by a percentage of the original size, and paste in a newly created directory.
 
